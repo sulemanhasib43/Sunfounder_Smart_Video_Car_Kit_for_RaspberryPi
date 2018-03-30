@@ -21,4 +21,5 @@ while 1:
             arr = x.split(',', 7);
             i = 2;
             while i < 8:
-            print(arr[i]) i += 1
+                print (arr[i])
+                i += 1
