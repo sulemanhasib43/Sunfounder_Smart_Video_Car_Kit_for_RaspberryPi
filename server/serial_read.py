@@ -5,6 +5,16 @@
 
 #  $GPGGA,123519,4807.038,N,01131.000,E,1,08,0.9,545.4,M,46.9,M,,*47
 
+# $GPGGA,,,,,,0,00,99.99,,,,,,*48
+
+
+
+
+
+# 0
+# 00,99.99,,,,,,*48
+
+
 # Where:
 #      GGA          Global Positioning System Fix Data
 #      123519       Fix taken at 12:35:19 UTC
@@ -32,6 +42,7 @@
 
 import time
 import serial
+# import re
 
 ser = serial.Serial(
     port='/dev/ttyAMA0',
@@ -42,14 +53,16 @@ ser = serial.Serial(
     timeout=1
     )
 counter = 0
-
+# ser = "GPGGA,,,,,,0,00,99.99,,,,,,*48"
 while 1:
-        x = ser.readline()
+        x = ser
+        # x = ser.readline()
         if "GPGGA" in x:
-            #print x
-            arr = x.split(',', 2);
+#            print x
+#            print re.match(".*?,.*?,\s*(.*?),.*", x).group(1)
+            arr = x.split(',',4);
             i = 2;
-            while i < 8:
+            while i < 5:
                 print (arr[i])
                 i += 1
 
@@ -58,9 +71,9 @@ while 1:
 # #!/usr/bin/python
 
 # str = "1,2,3,4,5,6,7,8,9,8,11,12,13";
-# arr = str.split(',', 7);
+# arr = str.split(',', 8);
 # i = 2;
-# while i < 8:
+# while i < 9:
 #     print(arr[i])
 #     i += 1
 
