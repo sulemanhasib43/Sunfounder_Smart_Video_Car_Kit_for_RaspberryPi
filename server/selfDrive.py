@@ -2,6 +2,21 @@
 # -*- coding: utf-8 -*-
 from Tkinter import *
 from socket import *  # Import necessary modules
+from gps import cord
+
+arr = cord()
+lat = arr[2]
+latD= arr[3]
+lng = arr[4]
+lngD= arr[5]
+print ('Current cordinates are:' lat,latD,lng, lngD)
+
+dlat =
+dlatD =
+dlng =
+dlndD =
+
+
 
 ctrl_cmd = ['forward', 'backward', 'left', 'right', 'stop', 'read cpu_temp', 'home', 'distance', 'x+', 'x-', 'y+', 'y-',
             'xy_home']
@@ -75,6 +90,12 @@ def y_decrease(event):
 def xy_home(event):
     print 'xy_home'
     tcpCliSock.send('xy_home')
+
+#======================================
+# Forward Car until destination arrived
+#======================================
+while :
+    pass
 
 
 # =============================================================================

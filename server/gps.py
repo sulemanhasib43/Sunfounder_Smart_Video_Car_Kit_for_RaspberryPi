@@ -15,6 +15,28 @@
 # 00,99.99,,,,,,*48
 
 
+
+#     pi@raspberrypi:~/git/Sunfounder_Smart_Video_Car_Kit_for_RaspberryPi/server $ ./serial_read.py 
+# ./
+
+# 3342.23820
+# N
+# 07258.76586
+# E
+# 1
+# 04,2.22,609.6,M,-40.6,M,,*7D
+
+# $GPGGA,110917.00,3342.23906,N,07258.76593,E,1,04,2.22,611.0,M,-40.6,M,,*72
+
+# 3342.23906
+# N
+# 07258.76593
+# E
+# 1
+# 04,2.22,611.0,M,-40.6,M,,*72
+
+
+
 # Where:
 #      GGA          Global Positioning System Fix Data
 #      123519       Fix taken at 12:35:19 UTC
@@ -42,39 +64,34 @@
 
 import time
 import serial
-# import re
 
-ser = serial.Serial(
-    port='/dev/ttyAMA0',
-    baudrate=9600,
-    parity=serial.PARITY_NONE,
-    stopbits=serial.STOPBITS_ONE,
-    bytesize=serial.EIGHTBITS,
-    timeout=1
-    )
-counter = 0
-# ser = "GPGGA,,,,,,0,00,99.99,,,,,,*48"
-while 1:
-        x = ser
-        # x = ser.readline()
-        if "GPGGA" in x:
-#            print x
-#            print re.match(".*?,.*?,\s*(.*?),.*", x).group(1)
-            arr = x.split(',',4);
-            i = 2;
-            while i < 5:
-                print (arr[i])
-                i += 1
+def cord():
+	# import re
 
+	# ser = serial.Serial(
+	#     port='/dev/ttyAMA0',
+	#     baudrate=9600,
+	#     parity=serial.PARITY_NONE,
+	#     stopbits=serial.STOPBITS_ONE,
+	#     bytesize=serial.EIGHTBITS,
+	#     timeout=1
+	#     )
+	# counter = 0
+	ser = "$GPGGA,110917.00,3342.23906,N,07258.76593,E,1,04,2.22,611.0,M,-40.6,M,,*72"
+	lstSer = ser.split(',')
+	return lstSer
+#	 return (lat,latD,lng, lngD)
+# while 1:
+#         x = ser
+#         # x = ser.readline()
+#         if "GPGGA" in x:
+# #            print x
+# #            print re.match(".*?,.*?,\s*(.*?),.*", x).group(1)
+#             arr = x.split(',',6);
+#             i = 2;
+#             while i < 6:
+#                 print (arr[i])
+#                 i += 1
 
-
-# #!/usr/bin/python
-
-# str = "1,2,3,4,5,6,7,8,9,8,11,12,13";
-# arr = str.split(',', 8);
-# i = 2;
-# while i < 9:
-#     print(arr[i])
-#     i += 1
-
-
+if __name__ == "__main__":
+    cord()
