@@ -87,10 +87,10 @@ def cord():
 	# else:
 	# 	ser = "$GPGGA,110917.00,3342.42906,N,07258.76593,E,1,04,2.22,611.0,M,-40.6,M,,*72"
 
-	lstSer = ser.split(',')
+	lstSer = ser.readline().split(',')
 	return lstSer
-#	 return (lat,latD,lng, lngD)
-# while 1:
+	 # return (lat,latD,lng, lngD)
+# 	while 1:
 #         x = ser
 #         # x = ser.readline()
 #         if "GPGGA" in x:
@@ -98,9 +98,9 @@ def cord():
 # #            print re.match(".*?,.*?,\s*(.*?),.*", x).group(1)
 #             arr = x.split(',',6);
 #             i = 2;
-#             while i < 6:
-#                 print (arr[i])
-#                 i += 1
+#             # while i < 6:
+#             #     print (arr[i])
+#             #     i += 1
 
 if __name__ == "__main__":
-    cord()
+    # cord()pass
