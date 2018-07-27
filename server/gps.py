@@ -65,19 +65,28 @@
 import time
 import serial
 
+# count = 0
+
 def cord():
 	# import re
 
-	# ser = serial.Serial(
-	#     port='/dev/ttyAMA0',
-	#     baudrate=9600,
-	#     parity=serial.PARITY_NONE,
-	#     stopbits=serial.STOPBITS_ONE,
-	#     bytesize=serial.EIGHTBITS,
-	#     timeout=1
-	#     )
+	ser = serial.Serial(
+	    port='/dev/ttyAMA0',
+	    baudrate=9600,
+	    parity=serial.PARITY_NONE,
+	    stopbits=serial.STOPBITS_ONE,
+	    bytesize=serial.EIGHTBITS,
+	    timeout=1
+	    )
 	# counter = 0
-	ser = "$GPGGA,110917.00,3342.23906,N,07258.76593,E,1,04,2.22,611.0,M,-40.6,M,,*72"
+	# global count
+	# count += 1 
+	# ser = ''
+	# if count < 10:
+	# 	ser = "$GPGGA,110917.00,3342.33906,N,07258.76593,E,1,04,2.22,611.0,M,-40.6,M,,*72"
+	# else:
+	# 	ser = "$GPGGA,110917.00,3342.42906,N,07258.76593,E,1,04,2.22,611.0,M,-40.6,M,,*72"
+
 	lstSer = ser.split(',')
 	return lstSer
 #	 return (lat,latD,lng, lngD)
