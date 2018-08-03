@@ -4,17 +4,17 @@ from Tkinter import *
 from socket import *  # Import necessary modules
 from gps import cord
 
-arr = cord()
-lat = arr[2]
-latD= arr[3]
-lng = arr[4]
-lngD= arr[5]
-print ('Current cordinates are:' lat,latD,lng, lngD)
+# arr = cord()
+# lat = arr[2]
+# latD= arr[3]
+# lng = arr[4]
+# lngD= arr[5]
+# print ('Current cordinates are:' lat,latD,lng, lngD)
 
-dlat =
-dlatD =
-dlng =
-dlndD =
+# dlat =
+# dlatD =
+# dlng =
+# dlngD =
 
 
 

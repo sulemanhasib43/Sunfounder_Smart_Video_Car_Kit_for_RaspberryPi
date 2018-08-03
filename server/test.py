@@ -6,8 +6,8 @@ from socket import *
 ctrl_cmd = ['forward', 'backward', 'left', 'right', 'stop', 'read cpu_temp', 'home', 'distance', 'x+', 'x-', 'y+', 'y-',
             'xy_home']
 
-top = Tk()  # Create a top window
-top.title('Sunfounder Raspberry Pi Smart Video Car')
+# top = Tk()  # Create a top window
+# top.title('Sunfounder Raspberry Pi Smart Video Car')
 
 HOST = '10.10.0.111'  # Server(Raspberry Pi) IP address
 PORT = 8000
